@@ -5,7 +5,7 @@
 ```
 npm install
 npm install mocha -g
-./tests/chromedriver
+./tests/chromedriver --url-base=/wd/hub
 ```
 
 
