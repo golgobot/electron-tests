@@ -16,7 +16,7 @@ test.describe('Mocha and Electron Test', function(){
           // binary: '/Path-to-Your-App.app/Contents/MacOS/Atom',
           // binary: '/Users/stephaniegama/electron-quick-start/node_modules/electron-prebuilt/cli.js',
           // binary: '/Users/stephaniegama/electron-quick-start/node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron',
-          binary: '/Users/stephaniegama/electron-v0.36.2-mas-x64/Electron.app/Contents/MacOS/Electron',
+          binary: '/usr/local/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron',
         }
       })
       .forBrowser('electron')

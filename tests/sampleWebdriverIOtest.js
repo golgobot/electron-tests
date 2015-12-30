@@ -1,4 +1,5 @@
 var webdriverio = require('webdriverio');
+var path = require('path');
 var assert = require('assert');
 var options = {
             host: "localhost", // Use localhost as chrome driver server
@@ -6,8 +7,8 @@ var options = {
             desiredCapabilities: {
                 browserName: 'chrome',
                 chromeOptions: {
-                  binary: '/Users/stephaniegama/electron-v0.36.2-mas-x64/Electron.app/Contents/MacOS/Electron', // Path to your Electron binary.
-                  // args: [/* cli arguments */]           // Optional, perhaps 'app=' + /path/to/your/app/
+                  binary: path.join(__dirname, '../node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron'),
+                  args: ['app=' + path.join(__dirname, '..', 'main.js')] 
                 }
             }
         };
