@@ -1,7 +1,8 @@
 var selenium = require('selenium-webdriver'),
     chai = require('chai'),
     assert = chai.assert;
-    test = require('selenium-webdriver/testing');
+    test = require('selenium-webdriver/testing')
+    path = require('path');
 
 test.describe('Mocha and Electron Test', function(){ 
 
@@ -12,11 +13,8 @@ test.describe('Mocha and Electron Test', function(){
       .usingServer('http://localhost:9515') //works with regular chrome
       .withCapabilities({
         chromeOptions: {
-          // Here is the path to your Electron binary.
-          // binary: '/Path-to-Your-App.app/Contents/MacOS/Atom',
-          // binary: '/Users/stephaniegama/electron-quick-start/node_modules/electron-prebuilt/cli.js',
-          // binary: '/Users/stephaniegama/electron-quick-start/node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron',
-          binary: '/usr/local/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron',
+          binary: path.join(__dirname, '../node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron'),
+          args: ['app=' + path.join(__dirname, '..', 'main.js')]
         }
       })
       .forBrowser('electron')
